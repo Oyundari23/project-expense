@@ -9,12 +9,6 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/articles", (req, res) => {
-  res.json([
-    { id: 1, title: "green" },
-    { id: 2, title: "juice" },
-  ]);
-});
 const categories = [
   {
     name: "shopping",
@@ -36,21 +30,17 @@ app.get("/categories/create", (req, res) => {
   res.send("success!");
 });
 
-const cart = [
-  {
-    name: "carl",
-  },
-];
 
-app.get("/listening/list", (req, res) => {
-  res.send(cart);
+app.get("/categories/update", (req, res) => {
+
+  res.send("success!");
 });
 
-app.get("/listening/create", (req, res) => {
-  const { name } = req.query;
-  cart.push({ name: name });
-  res.send("success");
+app.get("/categories/delete", (req, res) => {
+
+  res.send("success!");
 });
+
 
 
 app.listen(port, () => {
